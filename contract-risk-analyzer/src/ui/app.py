@@ -730,14 +730,6 @@ if nav == "Upload & Analyze":
             label_visibility="collapsed",
         )
         st.markdown('<div style="height:8px"></div>', unsafe_allow_html=True)
-        use_demo = st.checkbox("Use built-in demo contract instead")
-        if use_demo:
-            demo_text = st.text_area(
-                "Contract text",
-                value=DEMO_CONTRACT,
-                height=260,
-                label_visibility="collapsed",
-            )
 
     with col_right:
         st.markdown('<div class="options-panel">', unsafe_allow_html=True)
@@ -751,7 +743,7 @@ if nav == "Upload & Analyze":
 
     st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
-    ready   = uploaded_file is not None or use_demo
+    ready   = uploaded_file is not None
     analyze = st.button(
         "Analyze Contract →",
         type="primary",
@@ -770,9 +762,8 @@ if nav == "Upload & Analyze":
                     st.session_state.extracted_doc = doc
                     st.write(f"✓  {doc.total_pages} pages · {len(text):,} chars")
                 else:
-                    text = demo_text
-                    st.session_state.extracted_doc = None
-                    st.write("✓  Using demo contract")
+                    st.error("Please upload a PDF.")
+                    st.stop()
                 st.session_state.original_text = text
 
             with st.status("Segmenting clauses…", expanded=False):
