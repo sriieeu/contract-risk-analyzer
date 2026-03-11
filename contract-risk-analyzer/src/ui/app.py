@@ -35,25 +35,25 @@ st.markdown("""
 
 /* ── Design Tokens ── */
 :root {
-    --bg:           #ffffff;
-    --bg-soft:      #f7f5f2;
-    --bg-card:      #fdfcfb;
-    --bg-cream:     #f0ebe3;
+    --bg:           #FAF7F3;
+    --bg-soft:      #F0E4D3;
+    --bg-card:      #F0E4D3;
+    --bg-cream:     #F0E4D3;
 
-    --ink:          #1c1916;
-    --ink-mid:      #4a4540;
-    --ink-soft:     #9a948e;
+    --ink:          #111111;
+    --ink-mid:      #111111;
+    --ink-soft:     #333333;
 
-    --border:       #e8e4df;
-    --border-strong:#d0cac3;
+    --border:       #DCC5B2;
+    --border-strong:#D9A299;
 
-    --red:          #c0392b;
-    --red-soft:     #f5e8e7;
-    --red-mid:      #e8d5d3;
+    --red:          #D9A299;
+    --red-soft:     #DCC5B2;
+    --red-mid:      #DCC5B2;
 
-    --gold:         #c9993a;
-    --gold-soft:    #f5eddb;
-    --gold-mid:     #e8d9b8;
+    --gold:         #DCC5B2;
+    --gold-soft:    #F0E4D3;
+    --gold-mid:     #DCC5B2;
 
     --critical:     #991b1b;
     --critical-bg:  #fef2f2;
@@ -108,14 +108,13 @@ section[data-testid="stSidebar"] * { color: var(--ink-mid) !important; }
 }
 
 /* Nav */
-section[data-testid="stSidebar"] .stRadio > label { display: none; }
-section[data-testid="stSidebar"] .stRadio div[role="radiogroup"] {
-    gap: 1px !important;
+section[data-testid="stSidebar"] div[role="radiogroup"] {
+    gap: 2px !important;
     display: flex;
     flex-direction: column;
     padding: 8px 0;
 }
-section[data-testid="stSidebar"] .stRadio label {
+section[data-testid="stSidebar"] div[role="radiogroup"] > label {
     padding: 10px 24px !important;
     border-radius: 0 !important;
     font-family: 'IBM Plex Mono', monospace !important;
@@ -126,13 +125,22 @@ section[data-testid="stSidebar"] .stRadio label {
     transition: all 0.15s;
     border-left: 3px solid transparent !important;
     letter-spacing: 0.02em;
+    background: transparent !important;
 }
-section[data-testid="stSidebar"] .stRadio label:hover {
+/* Hide the default radio circle */
+section[data-testid="stSidebar"] div[role="radiogroup"] > label div[data-testid="stMarkdownContainer"] {
+    margin-left: 0 !important;
+}
+section[data-testid="stSidebar"] div[role="radiogroup"] > label input {
+    display: none !important;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] > label:hover {
     background: var(--bg-soft) !important;
     color: var(--ink) !important;
     border-left-color: var(--border-strong) !important;
 }
-section[data-testid="stSidebar"] label:has(input:checked) {
+section[data-testid="stSidebar"] div[role="radiogroup"] > label:has(input:checked) {
     background: var(--bg-soft) !important;
     color: var(--ink) !important;
     border-left-color: var(--red) !important;
@@ -714,7 +722,7 @@ if nav == "Upload & Analyze":
 
     st.markdown("""
     <div class="page-header">
-        <h1><span style="color:#e8e4df;">Contract Risk</span> <span class="accent">Analyzer.</span></h1>
+        <h1><span style="color:var(--ink);">Contract Risk</span> <span class="accent">Analyzer.</span></h1>
         <p>Upload a legal contract PDF — clauses are extracted, classified via BERT fine-tuned on CUAD,<br>
         and scored with plain-English risk explanations and SHAP token-level attribution.</p>
     </div>
@@ -732,14 +740,12 @@ if nav == "Upload & Analyze":
         st.markdown('<div style="height:8px"></div>', unsafe_allow_html=True)
 
     with col_right:
-        st.markdown('<div class="options-panel">', unsafe_allow_html=True)
-        st.markdown("<h4>Analysis Options</h4>", unsafe_allow_html=True)
+        st.subheader("Analysis Options")
         use_bert  = st.toggle("BERT Classifier", value=True,
                               help="Disable to use keyword fallback only")
         show_shap = st.toggle("Compute SHAP", value=True,
                               help="Token-level explanations (~5s extra)")
         min_words = st.slider("Min clause length (words)", 5, 50, 10)
-        st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
