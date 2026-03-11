@@ -700,9 +700,10 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
     nav = st.radio(
-        "",
+        "Navigation",
         ["Upload & Analyze", "Clause Review", "SHAP Explainability", "Redline Diff", "Risk Dashboard"],
         format_func=lambda x: f"  {x}",
+        label_visibility="collapsed",
     )
 
     st.markdown("""
