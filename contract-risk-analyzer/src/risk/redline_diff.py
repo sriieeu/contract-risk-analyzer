@@ -72,8 +72,8 @@ class RedlineDiff:
         diff = list(difflib.ndiff(orig_words, rev_words))
 
         html_parts = [
-            '<div style="font-family: Georgia, serif; line-height: 1.8; '
-            'padding: 16px; background: #fafaf9; border-radius: 8px;">'
+            '<div style="font-family: \'IBM Plex Mono\', monospace; font-size: 11.5px; line-height: 1.8; '
+            'padding: 18px 20px; background: var(--bg-card); color: var(--ink-mid); border: 1px solid var(--border); border-radius: 4px;">'
         ]
 
         for item in diff:
@@ -84,14 +84,14 @@ class RedlineDiff:
                 html_parts.append(f"{word} ")
             elif code == "- ":  # Deleted
                 html_parts.append(
-                    f'<del style="color: #dc2626; background: #fef2f2; '
-                    f'text-decoration: line-through; padding: 1px 2px; '
+                    f'<del style="color: var(--critical); background: var(--critical-bg); '
+                    f'text-decoration: line-through; padding: 1px 3px; '
                     f'border-radius: 2px;">{word}</del> '
                 )
             elif code == "+ ":  # Inserted
                 html_parts.append(
-                    f'<ins style="color: #16a34a; background: #f0fdf4; '
-                    f'text-decoration: underline; padding: 1px 2px; '
+                    f'<ins style="color: var(--low); background: var(--low-bg); '
+                    f'text-decoration: none; border-bottom: 2px solid var(--low-bdr); padding: 1px 3px; '
                     f'border-radius: 2px;">{word}</ins> '
                 )
             # Skip "? " lines from Differ
@@ -150,30 +150,34 @@ class RedlineDiff:
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            line-height: 1.6;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11.5px;
+            line-height: 1.8;
+            border: 1px solid var(--border);
+            border-radius: 4px;
             overflow: hidden;
+            background: var(--bg);
+            color: var(--ink-mid);
         }
         .diff-header {
-            padding: 8px 16px;
-            font-weight: 700;
-            font-size: 12px;
+            padding: 10px 16px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 500;
+            font-size: 10px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            border-bottom: 1px solid var(--border) !important;
         }
-        .diff-header.original { background: #fef2f2; color: #dc2626; }
-        .diff-header.revised  { background: #f0fdf4; color: #16a34a; }
-        .diff-col { overflow-y: auto; max-height: 600px; }
-        .line { padding: 2px 12px; white-space: pre-wrap; word-break: break-word; }
-        .line.equal    { background: #ffffff; }
-        .line.deleted  { background: #fff1f2; border-left: 3px solid #dc2626; }
-        .line.inserted { background: #f0fdf4; border-left: 3px solid #16a34a; }
-        .line.empty    { background: #f8f9fa; }
-        .del-word { background: #fca5a5; text-decoration: line-through; border-radius: 2px; padding: 0 2px; }
-        .ins-word { background: #86efac; border-radius: 2px; padding: 0 2px; }
+        .diff-header.original { background: var(--bg-soft); color: var(--ink-mid); }
+        .diff-header.revised  { background: var(--bg-soft); color: var(--ink-mid); border-left: 1px solid var(--border); }
+        .diff-col { overflow-y: auto; max-height: 480px; }
+        .line { padding: 4px 16px; white-space: pre-wrap; word-break: break-word; }
+        .line.equal    { background: transparent; }
+        .line.deleted  { background: var(--critical-bg); border-left: 3px solid var(--critical); color: var(--critical); }
+        .line.inserted { background: var(--low-bg); border-left: 3px solid var(--low); color: var(--low); }
+        .line.empty    { background: var(--bg-soft); }
+        .del-word { background: var(--critical-bdr); text-decoration: line-through; border-radius: 2px; padding: 0 2px; color: var(--critical); }
+        .ins-word { background: var(--low-bdr); border-radius: 2px; padding: 0 2px; color: var(--low); }
         </style>
         """
 
