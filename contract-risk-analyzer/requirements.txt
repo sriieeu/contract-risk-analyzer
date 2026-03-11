@@ -1,7 +1,6 @@
---extra-index-url https://download.pytorch.org/whl/cpu
-
 # Core ML
-torch>=2.0.0
+torch @ https://download.pytorch.org/whl/cpu/torch-2.0.1%2Bcpu-cp311-cp311-linux_x86_64.whl ; sys_platform == "linux"
+torch>=2.0.0 ; sys_platform != "linux"
 transformers>=4.35.0
 datasets>=2.14.0
 tokenizers>=0.15.0
@@ -14,7 +13,7 @@ pymupdf>=1.23.0
 
 # NLP
 spacy>=3.7.0
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
 
 # Data processing
 numpy>=1.24.0
