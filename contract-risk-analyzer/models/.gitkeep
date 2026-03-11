@@ -1,0 +1,2 @@
+# Model checkpoints go here after running: make train
+# The fine-tuned BERT model will be saved to: models/cuad_finetuned/

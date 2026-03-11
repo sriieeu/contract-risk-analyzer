@@ -1,0 +1,250 @@
+{
+  "clause_types": {
+    "document_name": {
+      "id": 0,
+      "label": "Document Name",
+      "risk_level": "low",
+      "description": "The name of the contract document.",
+      "risk_explanation": "Purely identifying — no legal risk."
+    },
+    "parties": {
+      "id": 1,
+      "label": "Parties",
+      "risk_level": "low",
+      "description": "Identification of the contracting parties.",
+      "risk_explanation": "Standard clause. Risk only if parties are misidentified."
+    },
+    "agreement_date": {
+      "id": 2,
+      "label": "Agreement Date",
+      "risk_level": "low",
+      "description": "The date of the contract execution.",
+      "risk_explanation": "Low risk unless backdating is implied."
+    },
+    "effective_date": {
+      "id": 3,
+      "label": "Effective Date",
+      "risk_level": "low",
+      "description": "The date the contract becomes effective.",
+      "risk_explanation": "Note if effective date differs from signing date."
+    },
+    "expiration_date": {
+      "id": 4,
+      "label": "Expiration Date",
+      "risk_level": "medium",
+      "description": "The date the contract expires.",
+      "risk_explanation": "Check if expiration triggers auto-renewal or penalties."
+    },
+    "renewal_term": {
+      "id": 5,
+      "label": "Renewal Term",
+      "risk_level": "high",
+      "description": "Terms governing automatic or manual contract renewal.",
+      "risk_explanation": "Auto-renewal clauses can create unintended multi-year commitments. Verify opt-out windows and notice requirements."
+    },
+    "notice_period_to_terminate_renewal": {
+      "id": 6,
+      "label": "Notice Period to Terminate Renewal",
+      "risk_level": "high",
+      "description": "Time required to give notice of non-renewal.",
+      "risk_explanation": "Short notice windows (< 30 days) are high risk. Missing the window locks you into another term."
+    },
+    "governing_law": {
+      "id": 7,
+      "label": "Governing Law",
+      "risk_level": "medium",
+      "description": "The jurisdiction whose laws govern the contract.",
+      "risk_explanation": "Unfavorable jurisdiction (e.g., foreign courts) may increase litigation costs."
+    },
+    "dispute_resolution": {
+      "id": 8,
+      "label": "Dispute Resolution",
+      "risk_level": "medium",
+      "description": "Process for resolving contract disputes.",
+      "risk_explanation": "Mandatory arbitration clauses may waive jury trial rights."
+    },
+    "anti_assignment": {
+      "id": 9,
+      "label": "Anti-Assignment",
+      "risk_level": "high",
+      "description": "Restrictions on assigning contract rights to third parties.",
+      "risk_explanation": "Broad anti-assignment clauses can block M&A transactions or corporate restructuring."
+    },
+    "ip_ownership_assignment": {
+      "id": 10,
+      "label": "IP Ownership / Assignment",
+      "risk_level": "high",
+      "description": "Provisions governing ownership of intellectual property created under the contract.",
+      "risk_explanation": "Work-for-hire and broad IP assignment clauses can transfer valuable IP rights to counterparty."
+    },
+    "license_grant": {
+      "id": 11,
+      "label": "License Grant",
+      "risk_level": "medium",
+      "description": "Rights granted to use intellectual property.",
+      "risk_explanation": "Scope limitations (field-of-use, territory, sublicensing) can restrict business operations."
+    },
+    "non_compete": {
+      "id": 12,
+      "label": "Non-Compete",
+      "risk_level": "critical",
+      "description": "Restrictions on competing business activities.",
+      "risk_explanation": "Overbroad non-compete clauses can severely limit future business opportunities. Check scope, geography, and duration."
+    },
+    "exclusivity": {
+      "id": 13,
+      "label": "Exclusivity",
+      "risk_level": "high",
+      "description": "Provisions restricting dealings with competitors or third parties.",
+      "risk_explanation": "Exclusivity locks in a single vendor/partner and eliminates leverage in future negotiations."
+    },
+    "no_solicitation": {
+      "id": 14,
+      "label": "No-Solicitation",
+      "risk_level": "medium",
+      "description": "Restrictions on soliciting employees or customers.",
+      "risk_explanation": "Can limit talent acquisition and sales activities post-contract."
+    },
+    "non_disparagement": {
+      "id": 15,
+      "label": "Non-Disparagement",
+      "risk_level": "medium",
+      "description": "Provisions prohibiting negative statements about counterparty.",
+      "risk_explanation": "May restrict whistleblower activities or legitimate criticism."
+    },
+    "limitation_of_liability": {
+      "id": 16,
+      "label": "Limitation of Liability",
+      "risk_level": "critical",
+      "description": "Caps on the amount of damages recoverable.",
+      "risk_explanation": "Liability caps that are too low leave you undercompensated for major breaches. Caps significantly below contract value are red flags."
+    },
+    "liquidated_damages": {
+      "id": 17,
+      "label": "Liquidated Damages",
+      "risk_level": "high",
+      "description": "Pre-specified damages for breach.",
+      "risk_explanation": "Verify amounts are reasonable and proportionate. Punitive amounts may be unenforceable."
+    },
+    "warranty_duration": {
+      "id": 18,
+      "label": "Warranty Duration",
+      "risk_level": "medium",
+      "description": "Duration of warranties provided.",
+      "risk_explanation": "Short warranty windows may leave you without recourse for defects discovered later."
+    },
+    "insurance": {
+      "id": 19,
+      "label": "Insurance",
+      "risk_level": "medium",
+      "description": "Requirements to maintain insurance coverage.",
+      "risk_explanation": "Verify required coverage amounts are achievable and cost-effective."
+    },
+    "audit_rights": {
+      "id": 20,
+      "label": "Audit Rights",
+      "risk_level": "medium",
+      "description": "Rights to audit counterparty's books and records.",
+      "risk_explanation": "Lack of audit rights in revenue-sharing or royalty agreements is a significant risk."
+    },
+    "most_favored_nation": {
+      "id": 21,
+      "label": "Most Favored Nation",
+      "risk_level": "high",
+      "description": "Guarantee of receiving the best terms offered to any party.",
+      "risk_explanation": "MFN clauses can be costly if you offer better terms to other customers/vendors."
+    },
+    "cap_on_liability": {
+      "id": 22,
+      "label": "Cap on Liability",
+      "risk_level": "critical",
+      "description": "Maximum aggregate liability amount.",
+      "risk_explanation": "Critically evaluate whether the cap adequately covers your exposure. Common red flag: cap set at contract fees paid."
+    },
+    "indemnification": {
+      "id": 23,
+      "label": "Indemnification",
+      "risk_level": "critical",
+      "description": "Obligation to compensate the other party for losses.",
+      "risk_explanation": "Mutual vs. one-sided indemnification is key. Broad indemnification without carve-outs for gross negligence is extremely high risk."
+    },
+    "change_of_control": {
+      "id": 24,
+      "label": "Change of Control",
+      "risk_level": "high",
+      "description": "Provisions triggered by ownership changes.",
+      "risk_explanation": "Change-of-control clauses can allow termination or price changes in M&A scenarios."
+    },
+    "termination_for_convenience": {
+      "id": 25,
+      "label": "Termination for Convenience",
+      "risk_level": "medium",
+      "description": "Right to terminate without cause.",
+      "risk_explanation": "One-sided termination rights create business continuity risk. Check if mutual and what notice is required."
+    },
+    "rofr_rofo_rofn": {
+      "id": 26,
+      "label": "ROFR / ROFO / ROFN",
+      "risk_level": "medium",
+      "description": "Rights of first refusal, offer, or negotiation.",
+      "risk_explanation": "These rights can delay transactions and complicate third-party dealings."
+    },
+    "minimum_commitment": {
+      "id": 27,
+      "label": "Minimum Commitment",
+      "risk_level": "high",
+      "description": "Minimum purchase or payment obligations.",
+      "risk_explanation": "Unmet minimums can trigger penalties even if business needs change."
+    },
+    "revenue_profit_sharing": {
+      "id": 28,
+      "label": "Revenue / Profit Sharing",
+      "risk_level": "high",
+      "description": "Provisions for sharing revenue or profits.",
+      "risk_explanation": "Vague calculation methodologies can lead to disputes. Ensure clear definitions of revenue/profit."
+    },
+    "price_restrictions": {
+      "id": 29,
+      "label": "Price Restrictions",
+      "risk_level": "medium",
+      "description": "Limitations on pricing or price changes.",
+      "risk_explanation": "Price caps or freeze clauses can impact profitability in inflationary environments."
+    },
+    "confidentiality": {
+      "id": 30,
+      "label": "Confidentiality / NDA",
+      "risk_level": "medium",
+      "description": "Obligations to protect confidential information.",
+      "risk_explanation": "Perpetual confidentiality obligations or overly broad definitions of confidential information increase risk."
+    },
+    "data_breach_notification": {
+      "id": 31,
+      "label": "Data Breach Notification",
+      "risk_level": "high",
+      "description": "Requirements for notifying parties of data breaches.",
+      "risk_explanation": "Tight notification windows (e.g., 24 hours) may be operationally difficult to meet and trigger penalties."
+    }
+  },
+  "risk_levels": {
+    "low": {
+      "color": "#22c55e",
+      "score_range": [0, 25],
+      "label": "Low Risk"
+    },
+    "medium": {
+      "color": "#f59e0b",
+      "score_range": [26, 55],
+      "label": "Medium Risk"
+    },
+    "high": {
+      "color": "#ef4444",
+      "score_range": [56, 80],
+      "label": "High Risk"
+    },
+    "critical": {
+      "color": "#7f1d1d",
+      "score_range": [81, 100],
+      "label": "Critical Risk"
+    }
+  }
+}
