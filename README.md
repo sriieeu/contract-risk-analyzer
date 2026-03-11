@@ -1,4 +1,4 @@
-# ⚖️ Contract Risk Analyzer
+#  Contract Risk Analyzer
 
 A production-grade legal contract analysis system using NLP and fine-tuned BERT on the CUAD dataset.
 
