@@ -1,6 +1,6 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 # Core ML
-torch @ https://download.pytorch.org/whl/cpu/torch-2.0.1%2Bcpu-cp311-cp311-linux_x86_64.whl ; sys_platform == "linux"
-torch>=2.0.0 ; sys_platform != "linux"
+torch==2.0.1+cpu
 transformers>=4.35.0
 datasets>=2.14.0
 tokenizers>=0.15.0
