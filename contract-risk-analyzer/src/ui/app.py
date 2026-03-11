@@ -35,25 +35,25 @@ st.markdown("""
 
 /* ── Design Tokens ── */
 :root {
-    --bg:           #FAF7F3;
-    --bg-soft:      #F0E4D3;
-    --bg-card:      #F0E4D3;
-    --bg-cream:     #F0E4D3;
+    --bg:           #F8FAFC;
+    --bg-soft:      #F1F5F9;
+    --bg-card:      #FFFFFF;
+    --bg-cream:     #F1F5F9;
 
-    --ink:          #111111;
-    --ink-mid:      #111111;
-    --ink-soft:     #333333;
+    --ink:          #0F172A;
+    --ink-mid:      #334155;
+    --ink-soft:     #64748B;
 
-    --border:       #DCC5B2;
-    --border-strong:#D9A299;
+    --border:       #CBD5E1;
+    --border-strong:#94A3B8;
 
-    --red:          #D9A299;
-    --red-soft:     #DCC5B2;
-    --red-mid:      #DCC5B2;
+    --red:          #1E3A8A;
+    --red-soft:     #DBEAFE;
+    --red-mid:      #93C5FD;
 
-    --gold:         #DCC5B2;
-    --gold-soft:    #F0E4D3;
-    --gold-mid:     #DCC5B2;
+    --gold:         #475569;
+    --gold-soft:    #E2E8F0;
+    --gold-mid:     #94A3B8;
 
     --critical:     #991b1b;
     --critical-bg:  #fef2f2;
