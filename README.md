@@ -61,4 +61,3 @@ The [Contract Understanding Atticus Dataset (CUAD)](https://www.atticusprojectai
 - **UI**: Streamlit
 - **Diff**: difflib + custom React-style renderer
 
-- 
