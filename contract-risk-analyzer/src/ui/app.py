@@ -497,6 +497,7 @@ div[data-testid="stFileUploader"] {
     background: var(--bg-soft) !important;
 }
 div[data-testid="stFileUploader"]:hover { border-color: var(--gold) !important; }
+div[data-testid="stFileUploader"] * { color: var(--ink-mid) !important; }
 
 .stTextArea textarea {
     font-family: 'IBM Plex Mono', monospace !important;
@@ -566,6 +567,12 @@ div[data-testid="stMetricLabel"] {
     letter-spacing: 0.1em !important;
     text-transform: uppercase !important;
     color: var(--ink-soft) !important;
+}
+div[data-testid="metric-container"] {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 12px 16px;
+    border-radius: 4px;
 }
 
 div[data-testid="stStatusWidget"] {
@@ -1034,20 +1041,15 @@ elif nav == "Redline Diff":
         st.markdown(section_label("Original"), unsafe_allow_html=True)
         orig_file = st.file_uploader("Original PDF", type=["pdf"], key="orig_pdf",
                                       label_visibility="collapsed")
-        orig_text = st.text_area("Or paste text", value=st.session_state.original_text,
-                                  height=220, key="orig_ta", label_visibility="collapsed")
     with col_r:
         st.markdown(section_label("Revised"), unsafe_allow_html=True)
         rev_file  = st.file_uploader("Revised PDF", type=["pdf"], key="rev_pdf",
                                       label_visibility="collapsed")
-        rev_text  = st.text_area("Or paste text", height=220, key="rev_ta",
-                                  placeholder="Paste revised contract…",
-                                  label_visibility="collapsed")
 
     if st.button("Generate Redlines →", type="primary"):
         extractor, *_, differ, _ = load_pipeline()
-        orig = orig_text
-        rev  = rev_text
+        orig = ""
+        rev  = ""
         if orig_file:
             with st.spinner("Extracting original…"):
                 orig = extractor.extract_from_bytes(orig_file.read(), orig_file.name).cleaned_text
@@ -1055,7 +1057,7 @@ elif nav == "Redline Diff":
             with st.spinner("Extracting revised…"):
                 rev = extractor.extract_from_bytes(rev_file.read(), rev_file.name).cleaned_text
         if not orig.strip() or not rev.strip():
-            st.error("Provide both original and revised text.")
+            st.error("Provide both original and revised PDF files.")
         else:
             with st.spinner("Diffing…"):
                 st.session_state.diff_result = differ.diff(orig, rev)
