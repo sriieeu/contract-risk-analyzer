@@ -61,3 +61,15 @@ The [Contract Understanding Atticus Dataset (CUAD)](https://www.atticusprojectai
 - **UI**: Streamlit
 - **Diff**: difflib + custom React-style renderer
 
+
+
+Web Preview:
+<img width="1808" height="802" alt="image" src="https://github.com/user-attachments/assets/b0c8eb87-aa71-4f99-b5eb-017ee199077e" />
+<img width="1441" height="861" alt="image" src="https://github.com/user-attachments/assets/90216d69-c4d0-4182-9541-5161981603b4" />
+<img width="1473" height="770" alt="image" src="https://github.com/user-attachments/assets/5d544e8d-aca7-4ec7-a613-2838b05c206f" />
+<img width="1420" height="744" alt="image" src="https://github.com/user-attachments/assets/d40c185c-9161-4486-9bde-af09fdb91c29" />
+
+
+<img width="1417" height="874" alt="image" src="https://github.com/user-attachments/assets/3d83fb30-c716-419b-864a-4504464cd1c5" />
+
+<img width="1478" height="777" alt="image" src="https://github.com/user-attachments/assets/fdecfe93-db14-4369-abad-b4dd9a985127" />
