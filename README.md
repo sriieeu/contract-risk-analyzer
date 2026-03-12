@@ -46,17 +46,12 @@ contract-risk-analyzer/
 └── requirements.txt
 ```
 
-Setup
+Setup:
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
-
-# Optional: Fine-tune on CUAD dataset
-python src/classification/train_cuad.py
-
-# Run the app
 streamlit run src/ui/app.py
 
-CUAD Dataset
+CUAD Dataset:
 
 The Contract Understanding Atticus Dataset (CUAD) (https://www.atticusprojectai.org/cuad) contains 510 contracts with 13,000+ expert annotations across 41 legal clause categories. We fine-tune `bert-base-uncased` on this benchmark for clause classification.
 
