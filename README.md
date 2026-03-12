@@ -58,7 +58,7 @@ streamlit run src/ui/app.py
 
 CUAD Dataset
 
-The [Contract Understanding Atticus Dataset (CUAD)](https://www.atticusprojectai.org/cuad) contains 510 contracts with 13,000+ expert annotations across 41 legal clause categories. We fine-tune `bert-base-uncased` on this benchmark for clause classification.
+The Contract Understanding Atticus Dataset (CUAD) (https://www.atticusprojectai.org/cuad) contains 510 contracts with 13,000+ expert annotations across 41 legal clause categories. We fine-tune `bert-base-uncased` on this benchmark for clause classification.
 
 Tech Stack
 - **PDF Parsing**: PyMuPDF (fitz)
