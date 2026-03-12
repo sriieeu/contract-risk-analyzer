@@ -1,6 +1,17 @@
-#  Contract Risk Analyzer
+Organizations deal with a large number of legal contracts such as vendor agreements, employment contracts, NDAs, and licensing agreements. Reviewing these documents manually is time-consuming and requires legal expertise because each contract contains multiple clauses that may introduce legal, financial, or compliance risks.
 
-A production-grade legal contract analysis system using NLP and fine-tuned BERT on the CUAD dataset.
+The Contract Risk Analyzer is a legal document analysis system designed to automate the identification and evaluation of risky clauses in contracts. It uses Natural Language Processing (NLP) techniques and a fine-tuned BERT (Bidirectional Encoder Representations from Transformers) model trained on the CUAD (Contract Understanding Atticus Dataset) to classify contract clauses and assess potential risk levels.
+
+The system extracts text from contract PDFs, segments them into clauses, classifies each clause into predefined legal categories, calculates a risk score, and explains why a clause is considered risky. The application also provides tools for comparing contract versions and visualizing model explanations.
+
+Objectives
+The main objectives of the Contract Risk Analyzer system are:
+Automate the extraction and analysis of legal clauses from contract documents.
+Classify clauses into standard legal categories based on the CUAD benchmark.
+Identify potential legal risks within specific clauses.
+Provide explainable AI outputs showing why the model flagged a clause.
+Allow contract comparison through a redline diff viewer.
+Enable quick review of contracts through an interactive web interface
 
 ## Features
 
@@ -35,9 +46,7 @@ contract-risk-analyzer/
 └── requirements.txt
 ```
 
-## Setup
-
-```bash
+Setup
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 
@@ -46,14 +55,12 @@ python src/classification/train_cuad.py
 
 # Run the app
 streamlit run src/ui/app.py
-```
 
-## CUAD Dataset
+CUAD Dataset
 
 The [Contract Understanding Atticus Dataset (CUAD)](https://www.atticusprojectai.org/cuad) contains 510 contracts with 13,000+ expert annotations across 41 legal clause categories. We fine-tune `bert-base-uncased` on this benchmark for clause classification.
 
-## Tech Stack
-
+Tech Stack
 - **PDF Parsing**: PyMuPDF (fitz)
 - **NLP Pipeline**: spaCy (en_core_web_sm)
 - **Model**: BERT fine-tuned on CUAD (HuggingFace Transformers)
